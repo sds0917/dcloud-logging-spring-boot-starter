@@ -38,14 +38,6 @@ public final class LoggerUtils {
 	private LoggerUtils() {
 	}
 
-	/**
-	 * 输出日志信息
-	 * @author 孙东升
-	 * @date 2018年10月16日
-	 * @param invocation
-	 * @return
-	 * @throws Throwable
-	 */
 	public static Object info(MethodInvocation invocation) throws Throwable {
 		Method method = invocation.getMethod();
 		String className = method.getDeclaringClass().getName();
@@ -65,16 +57,6 @@ public final class LoggerUtils {
 		return result;
 	}
 
-	/**
-	 * 格式化日志
-	 * @author 孙东升
-	 * @date 2018年10月16日
-	 * @param method
-	 * @param arguments
-	 * @param logger
-	 * @param result
-	 * @return
-	 */
 	public static String formatLogger(Method method, Object[] arguments, Logger logger, Object result) {
 		StringBuilder sb = new StringBuilder();
 		if (null == logger) {
@@ -86,15 +68,6 @@ public final class LoggerUtils {
 		return sb.toString();
 	}
 
-	/**
-	 * 解析spring el语句
-	 * @author 孙东升
-	 * @date 2018年10月16日
-	 * @param els
-	 * @param method
-	 * @param context
-	 * @return
-	 */
 	public static String parseSpel(String[] els, Method method, EvaluationContext context) {
 		List<String> values = new ArrayList<String>(els.length);
 		for (String el : els) {
@@ -111,13 +84,6 @@ public final class LoggerUtils {
 		return StringUtils.collectionToDelimitedString(values, "      ", "", "");
 	}
 
-	/**
-	 * 获取日志对象
-	 * @author 孙东升
-	 * @date 2018年10月16日
-	 * @param name
-	 * @return
-	 */
 	private static Log getLogger(String name) {
 		if (StringUtils.isEmpty(name)) {
 			return LOGGER;
@@ -129,13 +95,6 @@ public final class LoggerUtils {
 		return log;
 	}
 
-	/**
-	 * 获取<code>Logger</code>注解
-	 * @author 孙东升
-	 * @date 2018年10月16日
-	 * @param method
-	 * @return
-	 */
 	private static Set<Logger> getAnnotation(Method method) {
 		Set<Logger> logs = new HashSet<Logger>();
 		Loggers loggers = method.getAnnotation(Loggers.class);
