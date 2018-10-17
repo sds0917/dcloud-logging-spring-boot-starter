@@ -10,7 +10,7 @@
 		<relativePath />
 	</parent>
 
-	<groupId>com.dcloudframework</groupId>
+	<groupId>io.github.sds0917</groupId>
 	<artifactId>dcloud-logging-spring-boot-starter</artifactId>
 	<version>${project.release.version}</version>
 
