@@ -10,6 +10,7 @@
 	<groupId>io.github.sds0917</groupId>
 	<artifactId>dcloud-logging-spring-boot-starter</artifactId>
 	<version>1.0.0.RELEASE</version>
+	<packaging>jar</packaging>
 
 	<name>dcloud-logging-spring-boot-starter</name>
 	<description>记录日志</description>
@@ -127,7 +128,6 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<sourceDirectory>src</sourceDirectory>
 	</build>
 
 	<distributionManagement>
