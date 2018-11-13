@@ -6,13 +6,15 @@ import org.aopalliance.intercept.MethodInvocation;
 import com.dcloudframework.logging.utils.LoggerUtils;
 
 public class LoggerInterceptor implements MethodInterceptor {
+	private final LoggerUtils loggerUtils;
 
-	public LoggerInterceptor() {
+	public LoggerInterceptor(LoggerUtils loggerUtils) {
+		this.loggerUtils = loggerUtils;
 	}
 
 	@Override
 	public Object invoke(MethodInvocation invocation) throws Throwable {
-		return LoggerUtils.info(invocation);
+		return loggerUtils.info(invocation);
 	}
 
 }
